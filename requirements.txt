@@ -3,3 +3,4 @@ PyNaCl
 static_ffmpeg
 psutil
 flask
+yt-dlp
