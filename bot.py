@@ -51,19 +51,15 @@ FFMPEG_OPTIONS = {
 }
 YDL_OPTIONS = {
     'format': 'bestaudio/best',
-    'noplaylist': 'True',
+    'noplaylist': True,
     'quiet': True,
     'no_warnings': True,
     'default_search': 'auto',
     'source_address': '0.0.0.0',
-    # 明確指定使用 node 來處理 JavaScript
-    'postprocessors': [{
-        'key': 'FFmpegExtractAudio',
-        'preferredcodec': 'mp3',
-        'preferredquality': '192',
-    }],
+    # 新增這行指向你的檔案
+    'cookiefile': 'cookies.txt', 
+    'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
 }
-
 # ===== 審核日誌對照表 =====
 AUDIT_LOG_ACTIONS_CN = {
     "guild_update": "更新伺服器", "channel_create": "建立頻道", "channel_update": "更新頻道",
