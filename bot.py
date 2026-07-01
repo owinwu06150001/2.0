@@ -27,13 +27,22 @@ FFMPEG_OPTIONS = {
 }
 
 YDL_OPTIONS = {
-    'format': 'bestaudio/best', # 修改這裡，增加 fallback 機制
+    'format': 'bestaudio/best',
     'noplaylist': True,
     'quiet': True,
     'no_warnings': True,
     'default_search': 'ytsearch',
     'source_address': '0.0.0.0',
     'cookiefile': 'cookies.txt',
+    # 新增以下關鍵設定以提高成功率
+    'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+    'geo_bypass': True,  # 繞過地區限制
+    'extract_flat': False,
+    'postprocessors': [{
+        'key': 'FFmpegExtractAudio',
+        'preferredcodec': 'opus',
+        'preferredquality': '128',
+    }],
 }
 # ===== 事件監聽：無人時自動離開 =====
 @bot.event
