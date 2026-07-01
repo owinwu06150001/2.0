@@ -28,13 +28,8 @@ FFMPEG_OPTIONS = {
 
 YDL_OPTIONS = {
     'format': 'bestaudio/best',
-
-    'username': 'oauth2',
-    'password': '', 
-    
+    'cookiefile': 'cookies.txt',  
     'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
-    'http_headers': {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTMLNormally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
     'quiet': True,
     'no_warnings': True,
     'default_search': 'ytsearch',
@@ -91,7 +86,7 @@ async def play_audio(interaction: discord.Interaction, 關鍵字: str):
         else:
             await interaction.followup.send(f"已加入清單: {title}")
     except Exception as e:
-        await interaction.followup.send("播放失敗 請檢查連結或 Cookie 是否有效。")
+        await interaction.followup.send("播放失敗，請檢查連結或 Cookie 是否有效。")
         print(f"Error: {e}")
 
 @tree.command(name="離開", description="退出語音")
