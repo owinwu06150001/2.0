@@ -27,15 +27,14 @@ FFMPEG_OPTIONS = {
 }
 
 YDL_OPTIONS = {
-    'format': 'bestaudio/best',
-    'cookiefile': 'cookies.txt',  
-    'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+    'format': 'bestaudio',
+    'noplaylist': True,
     'quiet': True,
     'no_warnings': True,
     'default_search': 'ytsearch',
     'source_address': '0.0.0.0',
+    'cookiefile': 'cookies.txt', # 確保這行存在，因為你的認證已經成功了
 }
-
 # ===== 事件監聽：無人時自動離開 =====
 @bot.event
 async def on_voice_state_update(member, before, after):
