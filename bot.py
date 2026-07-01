@@ -23,17 +23,17 @@ tree = bot.tree
 # ===== 音訊與 YT 設定 =====
 FFMPEG_OPTIONS = {
     'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',
-    'options': '-vn',
+    'options': '-vn', # 這個選項會強制去除影片，只保留聲音，非常重要
 }
 
 YDL_OPTIONS = {
-    'format': 'bestaudio',
+    'format': 'bestaudio/best', # 修改這裡，增加 fallback 機制
     'noplaylist': True,
     'quiet': True,
     'no_warnings': True,
     'default_search': 'ytsearch',
     'source_address': '0.0.0.0',
-    'cookiefile': 'cookies.txt', # 確保這行存在，因為你的認證已經成功了
+    'cookiefile': 'cookies.txt',
 }
 # ===== 事件監聽：無人時自動離開 =====
 @bot.event
