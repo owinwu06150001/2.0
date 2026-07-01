@@ -33,6 +33,8 @@ YDL_OPTIONS = {
     'password': '', 
     
     'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36',
+    'http_headers': {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTMLNormally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
     'quiet': True,
     'no_warnings': True,
     'default_search': 'ytsearch',
